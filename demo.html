@@ -4,145 +4,238 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CryptoGuard</title>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#F4F3EF; --bg2:#ECEAE4; --bg3:#E2E0D8;
-  --border:#C8C4B8; --border2:#D8D4CC;
-  --text:#1A1916; --text2:#5A5650; --text3:#8A8680;
-  --accent:#1B4F8C; --accent2:#153D6F;
-  --safe:#1A6B3C; --safe-bg:#EAF3EE; --safe-bd:#A8D4B8;
-  --danger:#8B1A1A; --danger-bg:#F5EAEA; --danger-bd:#D4A8A8;
-  --warn:#7A5200; --warn-bg:#F5F0E8; --warn-bd:#D4C4A0;
-  --mono:'Source Code Pro',monospace;
-  --sans:'Source Sans 3',sans-serif;
+  --bg:       #0F1117;
+  --bg2:      #161820;
+  --bg3:      #1E2028;
+  --bg4:      #252830;
+  --border:   #2A2D38;
+  --border2:  #333640;
+  --text:     #E8E9EC;
+  --text2:    #9499A8;
+  --text3:    #5A5F70;
+  --accent:   #3B82F6;
+  --accent2:  #2563EB;
+  --safe:     #22C55E;
+  --safe-bg:  #0D2218;
+  --safe-bd:  #1A4030;
+  --danger:   #EF4444;
+  --danger-bg:#220D0D;
+  --danger-bd:#401A1A;
+  --warn:     #F59E0B;
+  --warn-bg:  #221A08;
+  --warn-bd:  #403010;
+  --mono:     'IBM Plex Mono', monospace;
+  --sans:     'IBM Plex Sans', sans-serif;
 }
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:13px; height:100vh; overflow:hidden; }
 
-.layout { display:grid; grid-template-columns:260px 1fr; height:100vh; }
+.layout { display:grid; grid-template-columns:272px 1fr; height:100vh; }
 
-/* Left */
+/*Sidebar*/
 .left { border-right:1px solid var(--border); background:var(--bg2); display:flex; flex-direction:column; overflow:hidden; }
-.cg-title { padding:14px 14px 12px; font-family:var(--sans); font-size:17px; font-weight:600; color:var(--text); border-bottom:1px solid var(--border); flex-shrink:0; }
-.cg-title span { color:var(--accent); }
-.perf { padding:12px 14px; overflow-y:auto; }
-.perf h4 { font-size:10px; font-weight:600; letter-spacing:0.08em; color:var(--text2); text-transform:uppercase; margin-bottom:10px; font-family:var(--mono); }
-.mblock { margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid var(--border2); }
-.mblock:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
-.mname { font-size:10px; font-weight:600; font-family:var(--mono); margin-bottom:5px; padding:2px 5px; border-radius:2px; display:inline-block; color:var(--text); background:var(--bg3); border:1px solid var(--border); }
-.msub { font-size:9px; color:var(--text3); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.04em; }
-.msubgap { margin-top:8px; }
-.mrow { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
-.mlbl { font-size:10px; color:var(--text2); font-family:var(--mono); min-width:56px; }
-.mtrack { flex:1; height:3px; background:var(--border); border-radius:1px; overflow:hidden; }
-.mfill { height:100%; border-radius:1px; background:var(--text); }
-.mscore { font-size:10px; font-family:var(--mono); font-weight:600; min-width:36px; text-align:right; color:var(--text); }
+.left-header { padding:12px 14px; border-bottom:1px solid var(--border); flex-shrink:0; }
+.perf { flex:1; overflow-y:auto; padding:12px 14px; }
+.perf::-webkit-scrollbar { width:3px; }
+.perf::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
+.group-label { font-size:9px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--text3); font-family:var(--mono); margin-bottom:8px; margin-top:14px; padding-bottom:5px; border-bottom:1px solid var(--border); }
+.group-label:first-child { margin-top:0; }
+.mblock { margin-bottom:10px; }
+.mname { font-size:10px; font-weight:600; font-family:var(--mono); color:var(--text2); margin-bottom:5px; }
+.msub { font-size:9px; color:var(--text3); font-family:var(--mono); margin-bottom:3px; }
+.msub-gap { margin-top:6px; }
+.mrow { display:flex; align-items:center; gap:6px; margin-bottom:2px; }
+.mlbl { font-size:9px; color:var(--text3); font-family:var(--mono); min-width:52px; }
+.mtrack { flex:1; height:2px; background:var(--bg4); border-radius:1px; overflow:hidden; }
+.mfill-gen { height:100%; border-radius:1px; background:#4ADE80; }
+.mfill-bc  { height:100%; border-radius:1px; background:#60A5FA; }
+.mscore { font-size:9px; font-family:var(--mono); color:var(--text2); min-width:38px; text-align:right; }
 
-/* Main */
+/*Main*/
 .main { display:flex; flex-direction:column; overflow:hidden; }
-.feed-bar { padding:9px 14px 7px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; background:var(--bg2); flex-shrink:0; }
-.feed-bar-title { font-size:10px; font-weight:600; letter-spacing:0.08em; color:var(--text2); text-transform:uppercase; font-family:var(--mono); }
+.topbar { padding:8px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; background:var(--bg2); flex-shrink:0; }
+.topbar-left { font-size:9px; font-weight:600; letter-spacing:0.1em; color:var(--text3); text-transform:uppercase; font-family:var(--mono); }
 .btns { display:flex; gap:6px; }
-.btn { background:var(--bg); border:1px solid var(--border); color:var(--text2); padding:3px 9px; border-radius:3px; font-family:var(--mono); font-size:10px; cursor:pointer; }
-.btn:hover { background:var(--bg3); }
-.btn.on { background:var(--accent); border-color:var(--accent); color:white; }
-.feed { flex:1; overflow-y:auto; padding:10px; display:flex; flex-direction:column; gap:6px; scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
+.btn { background:var(--bg3); border:1px solid var(--border2); color:var(--text2); padding:3px 10px; border-radius:3px; font-family:var(--mono); font-size:10px; cursor:pointer; transition:all 0.12s; }
+.btn:hover { background:var(--bg4); color:var(--text); }
+.btn.on { background:var(--accent); border-color:var(--accent2); color:white; }
+.btn.on:hover { background:var(--accent2); }
 
-/* Cards */
-.card { background:white; border:1px solid; border-left-width:3px; border-radius:4px; padding:10px 12px; flex-shrink:0; animation:fi 0.2s ease; }
-@keyframes fi { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
+/*Feed*/
+.feed { flex:1; overflow-y:auto; padding:10px; display:flex; flex-direction:column; gap:8px; scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
+.feed::-webkit-scrollbar { width:3px; }
+.feed::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
+
+/*Cards*/
+.card { background:var(--bg2); border:1px solid; border-left-width:3px; border-radius:4px; padding:12px 14px; flex-shrink:0; animation:fi 0.18s ease; }
+@keyframes fi { from{opacity:0;transform:translateY(-3px)} to{opacity:1;transform:translateY(0)} }
 .card.ph { border-color:var(--danger-bd); border-left-color:var(--danger); background:var(--danger-bg); }
 .card.le { border-color:var(--safe-bd);   border-left-color:var(--safe);   background:var(--safe-bg); }
 .card.sp { border-color:var(--warn-bd);   border-left-color:var(--warn);   background:var(--warn-bg); }
-.ctop { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:5px; gap:8px; }
+.ctop { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; gap:8px; }
 .csrc { font-size:10px; color:var(--text3); font-family:var(--mono); }
-.cverd { font-size:10px; font-weight:600; padding:1px 7px; border-radius:2px; font-family:var(--mono); flex-shrink:0; }
+.cverd { font-size:10px; font-weight:600; padding:2px 8px; border-radius:2px; font-family:var(--mono); flex-shrink:0; }
 .cverd.ph { color:var(--danger); background:var(--danger-bg); border:1px solid var(--danger-bd); }
 .cverd.le { color:var(--safe);   background:var(--safe-bg);   border:1px solid var(--safe-bd); }
 .cverd.sp { color:var(--warn);   background:var(--warn-bg);   border:1px solid var(--warn-bd); }
-.ctext { font-size:12px; color:var(--text); line-height:1.4; margin-bottom:7px; }
-.cmodels { display:grid; grid-template-columns:1fr 1fr 1fr; gap:5px; margin-bottom:5px; }
-.cm { border-radius:3px; padding:6px 8px; display:flex; flex-direction:column; gap:2px; }
+.ctext { font-size:13px; color:var(--text); line-height:1.6; margin-bottom:10px; }
+
+/*Model grid: two halves side by side, each half is 2x2*/
+.cmodels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+.cgroup-label {
+  font-size: 9px;
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 5px;
+}
+.cgroup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.cm { border-radius:3px; padding:8px 10px; }
 .cm.p { background:var(--danger-bg); border:1px solid var(--danger-bd); }
 .cm.l { background:var(--safe-bg);   border:1px solid var(--safe-bd); }
-.cmn { font-size:9px; font-family:var(--mono); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text2); }
-.cml { font-size:11px; font-weight:600; font-family:var(--mono); }
+.cmn  { font-size:10px; font-family:var(--mono); font-weight:600; color:var(--text3); margin-bottom:3px; }
+.cml  { font-size:13px; font-weight:600; font-family:var(--mono); margin-bottom:1px; }
 .cml.p { color:var(--danger); }
 .cml.l { color:var(--safe); }
-.cmpc { font-size:10px; font-family:var(--mono); }
+.cmpc { font-size:11px; font-family:var(--mono); }
 .cmpc.p { color:var(--danger); }
 .cmpc.l { color:var(--safe); }
 
-/* Loading */
-.loading { display:flex; align-items:center; justify-content:center; height:100%; flex-direction:column; gap:10px; color:var(--text2); font-size:12px; font-family:var(--mono); }
-.spinner { width:18px; height:18px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; }
-@keyframes spin { to{transform:rotate(360deg)} }
+/*Loading*/
+.loading { display:flex; align-items:center; justify-content:center; height:100%; flex-direction:column; gap:10px; color:var(--text3); font-size:11px; font-family:var(--mono); }
+.spinner { width:16px; height:16px; border:2px solid var(--border2); border-top-color:var(--accent); border-radius:50%; animation:spin 0.7s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg) } }
 
-/* Input */
+/*Input bar*/
 .input-wrap { border-top:1px solid var(--border); padding:10px 14px; background:var(--bg2); flex-shrink:0; }
-.input-lbl { font-size:10px; font-weight:600; letter-spacing:0.08em; color:var(--text2); text-transform:uppercase; margin-bottom:6px; font-family:var(--mono); }
+.input-lbl { font-size:9px; font-weight:600; letter-spacing:0.1em; color:var(--text3); text-transform:uppercase; margin-bottom:5px; font-family:var(--mono); }
 .input-row { display:flex; gap:6px; }
-textarea { flex:1; background:white; border:1px solid var(--border); border-radius:3px; color:var(--text); font-family:var(--mono); font-size:12px; padding:7px 10px; resize:none; height:58px; outline:none; line-height:1.4; }
+textarea { flex:1; background:var(--bg3); border:1px solid var(--border2); border-radius:3px; color:var(--text); font-family:var(--mono); font-size:12px; padding:7px 10px; resize:none; height:56px; outline:none; line-height:1.4; }
 textarea:focus { border-color:var(--accent); }
 textarea::placeholder { color:var(--text3); }
-.btn-run { background:var(--accent); border:1px solid var(--accent2); color:white; padding:0 14px; border-radius:3px; font-family:var(--mono); font-size:11px; cursor:pointer; align-self:stretch; font-weight:600; }
+.btn-run { background:var(--accent); border:1px solid var(--accent2); color:white; padding:0 16px; border-radius:3px; font-family:var(--mono); font-size:10px; cursor:pointer; align-self:stretch; font-weight:600; letter-spacing:0.04em; transition:background 0.12s; }
 .btn-run:hover { background:var(--accent2); }
-.btn-run:disabled { background:var(--bg3); border-color:var(--border); color:var(--text3); cursor:not-allowed; }
-.examples { margin-top:5px; font-size:10px; color:var(--text3); font-family:var(--mono); }
-.ex { display:inline-block; background:var(--bg); border:1px solid var(--border); border-radius:2px; padding:1px 6px; margin:2px 2px 0 0; cursor:pointer; font-size:10px; color:var(--text2); }
-.ex:hover { background:var(--bg3); }
-::-webkit-scrollbar { width:4px; }
-::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+.btn-run:disabled { background:var(--bg4); border-color:var(--border2); color:var(--text3); cursor:not-allowed; }
+.examples { margin-top:5px; font-size:9px; color:var(--text3); font-family:var(--mono); }
+.ex { display:inline-block; background:var(--bg3); border:1px solid var(--border); border-radius:2px; padding:1px 6px; margin:2px 2px 0 0; cursor:pointer; color:var(--text2); font-size:9px; transition:all 0.1s; }
+.ex:hover { background:var(--bg4); border-color:var(--accent); color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="layout">
 
+  <!--Sidebar-->
   <aside class="left">
-    <div class="cg-title">Crypto<span>Guard</span></div>
+    <div class="left-header">
+      <span style="font-size:15px; font-weight:600; letter-spacing:-0.01em; color:var(--text); font-family:var(--sans);">Crypto<span style="color:var(--accent);">Guard</span></span>
+    </div>
     <div class="perf">
-      <h4>Model Performance</h4>
+
+      <div class="group-label">General Models (email corpus)</div>
+
       <div class="mblock">
-        <div class="mname">TF-IDF + Logistic Regression</div>
-        <div class="msub">General email test set</div>
-        <div class="mrow"><span class="mlbl">Accuracy</span><div class="mtrack"><div class="mfill" style="width:97.9%"></div></div><span class="mscore">0.9788</span></div>
-        <div class="mrow"><span class="mlbl">Precision</span><div class="mtrack"><div class="mfill" style="width:97.1%"></div></div><span class="mscore">0.9705</span></div>
-        <div class="mrow"><span class="mlbl">Recall</span><div class="mtrack"><div class="mfill" style="width:98.8%"></div></div><span class="mscore">0.9875</span></div>
-        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill" style="width:97.9%"></div></div><span class="mscore">0.9789</span></div>
-        <div class="msub msubgap">Blockchain eval set</div>
-        <div class="mrow"><span class="mlbl">Accuracy</span><div class="mtrack"><div class="mfill" style="width:51.2%"></div></div><span class="mscore">0.5123</span></div>
-        <div class="mrow"><span class="mlbl">Precision</span><div class="mtrack"><div class="mfill" style="width:50.6%"></div></div><span class="mscore">0.5063</span></div>
-        <div class="mrow"><span class="mlbl">Recall</span><div class="mtrack"><div class="mfill" style="width:98.8%"></div></div><span class="mscore">0.9877</span></div>
-        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill" style="width:66.9%"></div></div><span class="mscore">0.6695</span></div>
+        <div class="mname">TF-IDF + LR</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:97.9%"></div></div><span class="mscore">0.9789</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:99.8%"></div></div><span class="mscore">0.9980</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:66.8%"></div></div><span class="mscore">0.6684</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:60.1%"></div></div><span class="mscore">0.6010</span></div>
       </div>
+
       <div class="mblock">
-        <div class="mname">DistilBERT (general)</div>
-        <div class="msub">General email test set</div>
-        <div class="mrow"><span class="mlbl">Accuracy</span><div class="mtrack"><div class="mfill" style="width:98.7%"></div></div><span class="mscore">0.9869</span></div>
-        <div class="mrow"><span class="mlbl">Precision</span><div class="mtrack"><div class="mfill" style="width:98.4%"></div></div><span class="mscore">0.9839</span></div>
-        <div class="mrow"><span class="mlbl">Recall</span><div class="mtrack"><div class="mfill" style="width:99%"></div></div><span class="mscore">0.9900</span></div>
-        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill" style="width:98.7%"></div></div><span class="mscore">0.9869</span></div>
-        <div class="msub msubgap">Blockchain eval set</div>
-        <div class="mrow"><span class="mlbl">Accuracy</span><div class="mtrack"><div class="mfill" style="width:46.3%"></div></div><span class="mscore">0.4630</span></div>
-        <div class="mrow"><span class="mlbl">Precision</span><div class="mtrack"><div class="mfill" style="width:47.9%"></div></div><span class="mscore">0.4786</span></div>
-        <div class="mrow"><span class="mlbl">Recall</span><div class="mtrack"><div class="mfill" style="width:82.7%"></div></div><span class="mscore">0.8272</span></div>
-        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill" style="width:60.6%"></div></div><span class="mscore">0.6063</span></div>
+        <div class="mname">DistilBERT</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:98.8%"></div></div><span class="mscore">0.9875</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:99.7%"></div></div><span class="mscore">0.9967</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:58.3%"></div></div><span class="mscore">0.5832</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:52.4%"></div></div><span class="mscore">0.5237</span></div>
       </div>
+
       <div class="mblock">
-        <div class="mname">DistilBERT (domain-adapted)</div>
-        <div class="msub">Blockchain test set (n=189)</div>
-        <div class="mrow"><span class="mlbl">Accuracy</span><div class="mtrack"><div class="mfill" style="width:95.7%"></div></div><span class="mscore">0.9568</span></div>
-        <div class="mrow"><span class="mlbl">Precision</span><div class="mtrack"><div class="mfill" style="width:94.1%"></div></div><span class="mscore">0.9405</span></div>
-        <div class="mrow"><span class="mlbl">Recall</span><div class="mtrack"><div class="mfill" style="width:97.5%"></div></div><span class="mscore">0.9753</span></div>
-        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill" style="width:95.8%"></div></div><span class="mscore">0.9576</span></div>
+        <div class="mname">BERT</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:99.1%"></div></div><span class="mscore">0.9907</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:99.8%"></div></div><span class="mscore">0.9982</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:60.2%"></div></div><span class="mscore">0.6019</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:55.4%"></div></div><span class="mscore">0.5535</span></div>
       </div>
+
+      <div class="mblock">
+        <div class="mname">RoBERTa</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:99.1%"></div></div><span class="mscore">0.9906</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:99.8%"></div></div><span class="mscore">0.9984</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-gen" style="width:63.0%"></div></div><span class="mscore">0.6302</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-gen" style="width:60.0%"></div></div><span class="mscore">0.6001</span></div>
+      </div>
+
+      <div class="group-label">Blockchain-Adapted Models</div>
+
+      <div class="mblock">
+        <div class="mname">TF-IDF + LR</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:62.2%"></div></div><span class="mscore">0.6222</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:54.7%"></div></div><span class="mscore">0.5471</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:97.5%"></div></div><span class="mscore">0.9754</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:99.8%"></div></div><span class="mscore">0.9975</span></div>
+      </div>
+
+      <div class="mblock">
+        <div class="mname">DistilBERT</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:95.4%"></div></div><span class="mscore">0.9535</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:98.8%"></div></div><span class="mscore">0.9880</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:98.6%"></div></div><span class="mscore">0.9861</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:99.9%"></div></div><span class="mscore">0.9985</span></div>
+      </div>
+
+      <div class="mblock">
+        <div class="mname">BERT</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:97.0%"></div></div><span class="mscore">0.9699</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:99.3%"></div></div><span class="mscore">0.9927</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:99.0%"></div></div><span class="mscore">0.9899</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:99.96%"></div></div><span class="mscore">0.9996</span></div>
+      </div>
+
+      <div class="mblock">
+        <div class="mname">RoBERTa</div>
+        <div class="msub">General test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:97.7%"></div></div><span class="mscore">0.9773</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:99.7%"></div></div><span class="mscore">0.9968</span></div>
+        <div class="msub msub-gap">Blockchain test</div>
+        <div class="mrow"><span class="mlbl">F1</span><div class="mtrack"><div class="mfill-bc" style="width:99.6%"></div></div><span class="mscore">0.9962</span></div>
+        <div class="mrow"><span class="mlbl">AUC</span><div class="mtrack"><div class="mfill-bc" style="width:99.99%"></div></div><span class="mscore">0.9999</span></div>
+      </div>
+
     </div>
   </aside>
 
+  <!--Main-->
   <main class="main">
-    <div class="feed-bar">
-      <span class="feed-bar-title">Classification Feed</span>
+    <div class="topbar">
+      <span class="topbar-left">Classification Feed</span>
       <div class="btns">
         <button class="btn on" id="btn-feed" onclick="toggleFeed()">Pause</button>
         <button class="btn" onclick="document.getElementById('feed').innerHTML=''">Clear</button>
@@ -157,19 +250,19 @@ textarea::placeholder { color:var(--text3); }
     </div>
 
     <div class="input-wrap">
-      <div class="input-lbl">Manual input</div>
+      <div class="input-lbl">Manual Input</div>
       <div class="input-row">
-        <textarea id="input-box" placeholder="Enter a message to classify..."></textarea>
-        <button class="btn-run" id="run-btn" onclick="runManual()" disabled>Run</button>
+        <textarea id="input-box" placeholder="Enter a message to classify...  (Ctrl+Enter to run)"></textarea>
+        <button class="btn-run" id="run-btn" onclick="runManual()" disabled>Classify</button>
       </div>
       <div class="examples">
         Examples:
         <span class="ex" onclick="fill('airdrop')">fake airdrop</span>
         <span class="ex" onclick="fill('seed')">seed phrase scam</span>
         <span class="ex" onclick="fill('founder')">founder impersonation</span>
-        <span class="ex" onclick="fill('legit-tx')">legitimate transaction</span>
-        <span class="ex" onclick="fill('legit-stake')">legitimate staking</span>
-        <span class="ex" onclick="fill('borderline')">borderline case</span>
+        <span class="ex" onclick="fill('legit-tx')">legit transaction</span>
+        <span class="ex" onclick="fill('legit-stake')">legit staking</span>
+        <span class="ex" onclick="fill('borderline')">borderline</span>
       </div>
     </div>
   </main>
@@ -178,7 +271,7 @@ textarea::placeholder { color:var(--text3); }
 <script>
 const API = window.location.origin;
 
-const FEED = [
+const FEED_MSGS = [
   {text:"URGENT: Your MetaMask wallet has been flagged for suspicious activity. Verify your seed phrase at metamask-security-verify.com within 48 hours or your funds will be frozen.",src:"Telegram · Crypto Support"},
   {text:"Your Binance order has been filled. You bought 0.05 BTC at a price of 43,250 USDT. Your updated portfolio balance is available in your account dashboard.",src:"Binance Notification"},
   {text:"Congratulations! You have been selected to receive a free airdrop of 500 ETH. Claim your tokens at metamask-airdrop-claim.com within 24 hours or your allocation will be lost.",src:"Discord · ETH Community"},
@@ -196,16 +289,30 @@ const FEED = [
   {text:"Exclusive whitelist spot available for the most anticipated NFT drop of 2024. You have been personally selected. Mint at nft-exclusive-mint.com. Only 100 spots remain.",src:"Discord"},
 ];
 
-const EX = {
-  airdrop:    "Congratulations! You have been selected to receive a free airdrop of 500 ETH. To claim your tokens, connect your wallet at metamask-airdrop-claim.com and approve the transaction within 24 hours or your allocation will be lost.",
-  seed:       "URGENT: Your MetaMask wallet has been compromised. To recover your funds, enter your 12-word seed phrase at metamask-recovery-portal.com immediately. Failure to act within 2 hours will result in permanent loss of access.",
-  founder:    "This is Vitalik Buterin. I am personally distributing ETH to early Ethereum supporters as a thank you for your loyalty. Send 0.5 ETH to this address and receive 5 ETH back within 10 minutes.",
-  'legit-tx': "Your Ethereum transaction 0x8f3b2a1c has been confirmed after 12 block confirmations. Gas used: 21,000. Transaction fee paid: 0.002 ETH. View on Etherscan for full details.",
+const EXAMPLES = {
+  airdrop:       "Congratulations! You have been selected to receive a free airdrop of 500 ETH. To claim your tokens, connect your wallet at metamask-airdrop-claim.com and approve the transaction within 24 hours or your allocation will be lost.",
+  seed:          "URGENT: Your MetaMask wallet has been compromised. To recover your funds, enter your 12-word seed phrase at metamask-recovery-portal.com immediately. Failure to act within 2 hours will result in permanent loss of access.",
+  founder:       "This is Vitalik Buterin. I am personally distributing ETH to early Ethereum supporters as a thank you. Send 0.5 ETH to this address and receive 5 ETH back within 10 minutes.",
+  'legit-tx':    "Your Ethereum transaction 0x8f3b2a1c has been confirmed after 12 block confirmations. Gas used: 21,000. Transaction fee paid: 0.002 ETH. View on Etherscan for full details.",
   'legit-stake': "Your staking rewards of 0.0042 ETH have been added to your validator balance. Current estimated annual percentage rate: 4.2%. Next reward expected in approximately 6.5 minutes.",
-  borderline: "We have been receiving complaints against your account. Please find the details below in PDF for your kind attention. Open the attached file. Thanks and best regards, Manager, Human Resources.",
+  borderline:    "We have been receiving complaints against your account. Please find the details below in PDF for your kind attention. Open the attached file. Thanks and best regards, Manager, Human Resources.",
 };
 
-let running=false, idx=0, ready=false, timer=null;
+const MODEL_SHORT = {
+  tfidf_general:         "TF-IDF",
+  distilbert_general:    "DistilBERT",
+  bert_general:          "BERT",
+  roberta_general:       "RoBERTa",
+  tfidf_blockchain:      "TF-IDF",
+  distilbert_blockchain: "DistilBERT",
+  bert_blockchain:       "BERT",
+  roberta_blockchain:    "RoBERTa",
+};
+
+const GEN_KEYS = ["tfidf_general", "distilbert_general", "bert_general", "roberta_general"];
+const BC_KEYS  = ["tfidf_blockchain", "distilbert_blockchain", "bert_blockchain", "roberta_blockchain"];
+
+let running = false, feedIdx = 0, ready = false, feedTimer = null;
 
 async function pollStatus() {
   try {
@@ -214,7 +321,8 @@ async function pollStatus() {
     if (d.status === 'ready') {
       ready = true;
       document.getElementById('run-btn').disabled = false;
-      document.getElementById('feed-loading').remove();
+      const el = document.getElementById('feed-loading');
+      if (el) el.remove();
       running = true;
       scheduleFeed();
     } else if (d.status === 'error') {
@@ -229,71 +337,97 @@ async function pollStatus() {
 }
 
 async function classify(text) {
-  const r = await fetch(`${API}/classify`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({text})});
+  const r = await fetch(`${API}/classify`, {
+    method:  'POST',
+    headers: {'Content-Type': 'application/json'},
+    body:    JSON.stringify({text}),
+  });
   if (!r.ok) throw new Error('Server error ' + r.status);
   return r.json();
 }
 
-function getClass(d) {
-  const v = d.tfidf.prediction + d.distilbert.prediction + d.adapted.prediction;
-  return v >= 2 ? 'ph' : v >= 1 ? 'sp' : 'le';
+function buildGroup(keys, results) {
+  return keys.map(key => {
+    const r    = results[key] || {};
+    const isPh = r.prediction === 1;
+    const pc   = Math.round((r.probability || 0) * 100);
+    return `<div class="cm ${isPh ? 'p' : 'l'}">
+      <div class="cmn">${MODEL_SHORT[key]}</div>
+      <div class="cml ${isPh ? 'p' : 'l'}">${r.label || '—'}</div>
+      <div class="cmpc ${isPh ? 'p' : 'l'}">${pc}%</div>
+    </div>`;
+  }).join('');
 }
 
-function addCard(src, d) {
-  const feed = document.getElementById('feed');
-  const cls = getClass(d);
-  const v = d.tfidf.prediction + d.distilbert.prediction + d.adapted.prediction;
-  const vt = cls==='ph' ? `Phishing (${v}/3)` : cls==='sp' ? `Split (${v}/3)` : 'Legitimate (3/3)';
-  const tp = Math.round(d.tfidf.probability*100);
-  const bp = Math.round(d.distilbert.probability*100);
-  const ap = Math.round(d.adapted.probability*100);
+function addCard(src, data) {
+  const feed    = document.getElementById('feed');
+  const results = data.results || {};
+  const votes   = data.ensemble_votes || 0;
+  const cls     = votes >= 5 ? 'ph' : votes >= 2 ? 'sp' : 'le';
+  const vt      = votes >= 5 ? `Phishing (${votes}/8)` : votes >= 2 ? `Split (${votes}/8)` : `Legitimate (${8-votes}/8)`;
+  const text    = data.text || '';
+
   const c = document.createElement('div');
   c.className = 'card ' + cls;
   c.innerHTML = `
-    <div class="ctop"><span class="csrc">${src}</span><span class="cverd ${cls}">${vt}</span></div>
-    <div class="ctext">${(d.text||'').substring(0,180)}${(d.text||'').length>180?'...':''}</div>
-    <div class="cmodels">
-      <div class="cm ${d.tfidf.prediction===1?'p':'l'}"><div class="cmn">TF-IDF + LR</div><div class="cml ${d.tfidf.prediction===1?'p':'l'}">${d.tfidf.label}</div><div class="cmpc ${d.tfidf.prediction===1?'p':'l'}">${tp}% phishing</div></div>
-      <div class="cm ${d.distilbert.prediction===1?'p':'l'}"><div class="cmn">DistilBERT</div><div class="cml ${d.distilbert.prediction===1?'p':'l'}">${d.distilbert.label}</div><div class="cmpc ${d.distilbert.prediction===1?'p':'l'}">${bp}% phishing</div></div>
-      <div class="cm ${d.adapted.prediction===1?'p':'l'}"><div class="cmn">Adapted</div><div class="cml ${d.adapted.prediction===1?'p':'l'}">${d.adapted.label}</div><div class="cmpc ${d.adapted.prediction===1?'p':'l'}">${ap}% phishing</div></div>
+    <div class="ctop">
+      <span class="csrc">${src}</span>
+      <span class="cverd ${cls}">${vt}</span>
     </div>
-`;
+    <div class="ctext">${text.substring(0, 200)}${text.length > 200 ? '...' : ''}</div>
+    <div class="cmodels">
+      <div>
+        <div class="cgroup-label">General</div>
+        <div class="cgroup-grid">${buildGroup(GEN_KEYS, results)}</div>
+      </div>
+      <div>
+        <div class="cgroup-label">Blockchain-Adapted</div>
+        <div class="cgroup-grid">${buildGroup(BC_KEYS, results)}</div>
+      </div>
+    </div>
+  `;
   feed.insertBefore(c, feed.firstChild);
-  while (feed.children.length > 20) feed.removeChild(feed.lastChild);
+  while (feed.children.length > 25) feed.removeChild(feed.lastChild);
 }
 
 async function feedStep() {
   if (!running || !ready) return;
-  const msg = FEED[idx % FEED.length]; idx++;
-  try { const d = await classify(msg.text); addCard(msg.src, d); } catch(e) { console.error(e); }
+  const msg = FEED_MSGS[feedIdx % FEED_MSGS.length]; feedIdx++;
+  try { const d = await classify(msg.text); addCard(msg.src, d); }
+  catch(e) { console.error(e); }
   if (running) scheduleFeed();
 }
 
-function scheduleFeed() { timer = setTimeout(feedStep, 2600 + Math.random()*2000); }
+function scheduleFeed() { feedTimer = setTimeout(feedStep, 3000 + Math.random() * 2000); }
 
 function toggleFeed() {
   running = !running;
   const b = document.getElementById('btn-feed');
-  if (running) { b.textContent='Pause'; b.classList.add('on'); scheduleFeed(); }
-  else { b.textContent='Resume'; b.classList.remove('on'); if(timer) clearTimeout(timer); }
+  if (running) { b.textContent = 'Pause'; b.classList.add('on'); scheduleFeed(); }
+  else { b.textContent = 'Resume'; b.classList.remove('on'); if (feedTimer) clearTimeout(feedTimer); }
 }
 
 async function runManual() {
   if (!ready) return;
-  const box = document.getElementById('input-box');
-  const btn = document.getElementById('run-btn');
+  const box  = document.getElementById('input-box');
+  const btn  = document.getElementById('run-btn');
   const text = box.value.trim();
   if (!text) return;
-  btn.disabled=true; btn.textContent='Running...';
-  try { const d = await classify(text); addCard('Manual input', d); box.value=''; }
-  catch(e) { alert('Error: '+e.message); }
-  finally { btn.disabled=false; btn.textContent='Run'; }
+  btn.disabled = true; btn.textContent = 'Running...';
+  try { const d = await classify(text); addCard('Manual input', d); box.value = ''; }
+  catch(e) { alert('Error: ' + e.message); }
+  finally { btn.disabled = false; btn.textContent = 'Classify'; }
 }
 
-function fill(k) { document.getElementById('input-box').value = EX[k]||''; document.getElementById('input-box').focus(); }
+function fill(k) {
+  document.getElementById('input-box').value = EXAMPLES[k] || '';
+  document.getElementById('input-box').focus();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('input-box').addEventListener('keydown', e => { if(e.key==='Enter'&&e.ctrlKey) runManual(); });
+  document.getElementById('input-box').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.ctrlKey) runManual();
+  });
   pollStatus();
 });
 </script>

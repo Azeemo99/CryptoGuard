@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4dd5f4d-32f9-4728-87f1-d256b0c4a1ee" name="Changes" comment="generated and cleaned synthetic blockchain communication dataset">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/CryptoGuard.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/roberta_blockchain/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/07_blockchain_data_split.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/11_tfidf_cross_validation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain_synthetic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/processed/train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="68" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Azeemo99&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Azeemo99/Blockchain-Phishing-Detector.git&quot;,
+    &quot;accountId&quot;: &quot;c5c7fbf4-17f5-4e2d-90b7-41333ae7fa72&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0463653099656163" />
+      <entry key="MS500" value="1.7634160583617133" />
+      <entry key="S2" value="3.1048794522264767" />
+      <entry key="S5" value="3.9994526728467856" />
+      <entry key="S10" value="4.629215200373974" />
+      <entry key="S30" value="6.965478769315769" />
+      <entry key="S60" value="9.539897488763161" />
+      <entry key="M2" value="11.997351314361387" />
+      <entry key="M5" value="14.15440004309513" />
+      <entry key="M10" value="15.030108807307633" />
+      <entry key="M15" value="15.34580727326957" />
+      <entry key="M30" value="16.196834561791484" />
+      <entry key="H1" value="25.225412356843876" />
+      <entry key="H2" value="61.407984738926594" />
+      <entry key="H4" value="120.83286113444836" />
+      <entry key="D1" value="235.8465076539478" />
+      <entry key="W1" value="267.2762518015907" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="1.1669020310603108E-222" />
+      <entry key="M2" value="1.4978460792251388E-111" />
+      <entry key="M5" value="7.057860314813065E-45" />
+      <entry key="M10" value="1.1871158417661532E-22" />
+      <entry key="M15" value="3.0426988800678875E-15" />
+      <entry key="M30" value="7.800179405993661E-8" />
+      <entry key="H1" value="3.9496382370441443E-4" />
+      <entry key="H2" value="0.02810549013058747" />
+      <entry key="H4" value="0.23708820904893693" />
+      <entry key="D1" value="1.4017693801062403" />
+      <entry key="W1" value="1.90098856313282" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9484477609154655" />
+      <entry key="MS500" value="1.7257185522208582" />
+      <entry key="S2" value="3.087579261029931" />
+      <entry key="S5" value="3.9904887325342657" />
+      <entry key="S10" value="4.6239982471280845" />
+      <entry key="S30" value="6.962564512852975" />
+      <entry key="S60" value="9.537574185911726" />
+      <entry key="M2" value="11.99570444692283" />
+      <entry key="M5" value="14.153553918755897" />
+      <entry key="M10" value="15.029645830612658" />
+      <entry key="M15" value="15.34548882234519" />
+      <entry key="M30" value="16.19664570783323" />
+      <entry key="H1" value="25.22536750857258" />
+      <entry key="H2" value="61.4350176937767" />
+      <entry key="H4" value="121.0686515342862" />
+      <entry key="D1" value="237.24780023285422" />
+      <entry key="W1" value="269.1771617483141" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Cc9oWKEFtab6GfZa3uJz2bygZr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Flask server.Flask (app.py).executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "A:/Coding/PycharmProjects/cryptoguard/notebooks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Coding\PycharmProjects\cryptoguard\notebooks" />
+      <recent name="A:\Coding\PycharmProjects\FinalYearProject" />
+      <recent name="A:\Coding\PycharmProjects\FinalYearProject\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Coding\PycharmProjects\cryptoguard\models\roberta_blockchain" />
+      <recent name="A:\Coding\PycharmProjects\CryptoGuard\data\general" />
+      <recent name="A:\Coding\PycharmProjects\CryptoGuard\data\blockchain" />
+      <recent name="A:\Coding\PycharmProjects\CryptoGuard\data\blockchain\unprocessed" />
+      <recent name="A:\Coding\PycharmProjects\CryptoGuard\data\blockchain\processed" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CryptoGuard" type="PythonConfigurationType" factoryName="Python">
+      <module name="CryptoGuard" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.24374.152" />
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4dd5f4d-32f9-4728-87f1-d256b0c4a1ee" name="Changes" comment="" />
+      <created>1776674167052</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776674167052</updated>
+      <workItem from="1776674168058" duration="41561000" />
+      <workItem from="1778834108713" duration="2246000" />
+      <workItem from="1778932773488" duration="7560000" />
+      <workItem from="1779023289704" duration="4021000" />
+      <workItem from="1779028160447" duration="3090000" />
+      <workItem from="1779032340540" duration="799000" />
+      <workItem from="1779033469677" duration="30000" />
+      <workItem from="1779033522846" duration="3877000" />
+      <workItem from="1779062040498" duration="26244000" />
+    </task>
+    <task id="LOCAL-00001" summary="Demo-ready">
+      <option name="closed" value="true" />
+      <created>1777019559682</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777019559682</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Readme update">
+      <option name="closed" value="true" />
+      <created>1777019896838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777019896838</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Synthesised Blockchain communication dataset added">
+      <option name="closed" value="true" />
+      <created>1777151639546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777151639546</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated Readme">
+      <option name="closed" value="true" />
+      <created>1777151801170</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777151801170</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated Readme again">
+      <option name="closed" value="true" />
+      <created>1777151893346</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777151893346</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Demo-ready" />
+    <MESSAGE value="Readme update" />
+    <MESSAGE value="Synthesised Blockchain communication dataset added" />
+    <MESSAGE value="Updated Readme" />
+    <MESSAGE value="Updated Readme again" />
+    <MESSAGE value="generated and cleaned synthetic blockchain communication dataset" />
+    <option name="LAST_COMMIT_MESSAGE" value="generated and cleaned synthetic blockchain communication dataset" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CryptoGuard$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1779096436382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/FinalYearProject$app.coverage" NAME="app Coverage Results" MODIFIED="1777016461944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
