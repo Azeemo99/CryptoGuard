@@ -1,12 +1,6 @@
 .env
 data/
-models/
-outputs/
-anaconda_projects/
-.venv/
 __pycache__/
 *.pyc
 server.log
 packages/
-.idea/
-.ipynb_checkpoints/
