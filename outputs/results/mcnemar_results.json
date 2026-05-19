@@ -1,0 +1,562 @@
+[
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "TF-IDF Blockchain",
+    "b": 784,
+    "c": 13,
+    "chi2": 743.9147,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "DistilBERT General",
+    "b": 8,
+    "c": 22,
+    "chi2": 5.6333,
+    "p_value": 0.017622,
+    "stars": "*"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "BERT General",
+    "b": 3,
+    "c": 22,
+    "chi2": 12.96,
+    "p_value": 0.000318,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "RoBERTa General",
+    "b": 5,
+    "c": 24,
+    "chi2": 11.1724,
+    "p_value": 0.00083,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 62,
+    "c": 21,
+    "chi2": 19.2771,
+    "p_value": 1.1e-05,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "BERT Blockchain",
+    "b": 37,
+    "c": 22,
+    "chi2": 3.322,
+    "p_value": 0.068357,
+    "stars": "ns"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 25,
+    "c": 23,
+    "chi2": 0.0208,
+    "p_value": 0.885234,
+    "stars": "ns"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "DistilBERT General",
+    "b": 7,
+    "c": 792,
+    "chi2": 769.2816,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "BERT General",
+    "b": 4,
+    "c": 794,
+    "chi2": 780.1015,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "RoBERTa General",
+    "b": 6,
+    "c": 796,
+    "chi2": 776.2107,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "DistilBERT Blockchain",
+    "b": 24,
+    "c": 754,
+    "chi2": 683.0861,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "BERT Blockchain",
+    "b": 10,
+    "c": 766,
+    "chi2": 734.5683,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "RoBERTa Blockchain",
+    "b": 22,
+    "c": 791,
+    "chi2": 725.4908,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT General",
+    "model_b": "BERT General",
+    "b": 3,
+    "c": 8,
+    "chi2": 1.4545,
+    "p_value": 0.2278,
+    "stars": "ns"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT General",
+    "model_b": "RoBERTa General",
+    "b": 4,
+    "c": 9,
+    "chi2": 1.2308,
+    "p_value": 0.267257,
+    "stars": "ns"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 61,
+    "c": 6,
+    "chi2": 43.5224,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT General",
+    "model_b": "BERT Blockchain",
+    "b": 38,
+    "c": 9,
+    "chi2": 16.6809,
+    "p_value": 4.4e-05,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 23,
+    "c": 7,
+    "chi2": 7.5,
+    "p_value": 0.00617,
+    "stars": "**"
+  },
+  {
+    "test_set": "general",
+    "model_a": "BERT General",
+    "model_b": "RoBERTa General",
+    "b": 4,
+    "c": 4,
+    "chi2": 0.125,
+    "p_value": 0.723674,
+    "stars": "ns"
+  },
+  {
+    "test_set": "general",
+    "model_a": "BERT General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 64,
+    "c": 4,
+    "chi2": 51.1912,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "BERT General",
+    "model_b": "BERT Blockchain",
+    "b": 40,
+    "c": 6,
+    "chi2": 23.6739,
+    "p_value": 1e-06,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "BERT General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 25,
+    "c": 4,
+    "chi2": 13.7931,
+    "p_value": 0.000204,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "RoBERTa General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 65,
+    "c": 5,
+    "chi2": 49.7286,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "RoBERTa General",
+    "model_b": "BERT Blockchain",
+    "b": 41,
+    "c": 7,
+    "chi2": 22.6875,
+    "p_value": 2e-06,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "RoBERTa General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 25,
+    "c": 4,
+    "chi2": 13.7931,
+    "p_value": 0.000204,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT Blockchain",
+    "model_b": "BERT Blockchain",
+    "b": 15,
+    "c": 41,
+    "chi2": 11.1607,
+    "p_value": 0.000835,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "DistilBERT Blockchain",
+    "model_b": "RoBERTa Blockchain",
+    "b": 15,
+    "c": 54,
+    "chi2": 20.9275,
+    "p_value": 5e-06,
+    "stars": "***"
+  },
+  {
+    "test_set": "general",
+    "model_a": "BERT Blockchain",
+    "model_b": "RoBERTa Blockchain",
+    "b": 22,
+    "c": 35,
+    "chi2": 2.5263,
+    "p_value": 0.111961,
+    "stars": "ns"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "TF-IDF Blockchain",
+    "b": 2,
+    "c": 370,
+    "chi2": 362.0672,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "DistilBERT General",
+    "b": 103,
+    "c": 75,
+    "chi2": 4.0955,
+    "p_value": 0.042997,
+    "stars": "*"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "BERT General",
+    "b": 89,
+    "c": 67,
+    "chi2": 2.8269,
+    "p_value": 0.092696,
+    "stars": "ns"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "RoBERTa General",
+    "b": 83,
+    "c": 106,
+    "chi2": 2.5608,
+    "p_value": 0.10954,
+    "stars": "ns"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 7,
+    "c": 384,
+    "chi2": 361.5754,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "BERT Blockchain",
+    "b": 4,
+    "c": 384,
+    "chi2": 370.2088,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 1,
+    "c": 386,
+    "chi2": 381.0233,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "DistilBERT General",
+    "b": 402,
+    "c": 6,
+    "chi2": 382.4142,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "BERT General",
+    "b": 396,
+    "c": 6,
+    "chi2": 376.4204,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "RoBERTa General",
+    "b": 352,
+    "c": 7,
+    "chi2": 329.6267,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "DistilBERT Blockchain",
+    "b": 7,
+    "c": 16,
+    "chi2": 2.7826,
+    "p_value": 0.095293,
+    "stars": "ns"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "BERT Blockchain",
+    "b": 5,
+    "c": 17,
+    "chi2": 5.5,
+    "p_value": 0.019016,
+    "stars": "*"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "TF-IDF Blockchain",
+    "model_b": "RoBERTa Blockchain",
+    "b": 1,
+    "c": 18,
+    "chi2": 13.4737,
+    "p_value": 0.000242,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT General",
+    "model_b": "BERT General",
+    "b": 36,
+    "c": 42,
+    "chi2": 0.3205,
+    "p_value": 0.5713,
+    "stars": "ns"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT General",
+    "model_b": "RoBERTa General",
+    "b": 29,
+    "c": 80,
+    "chi2": 22.9358,
+    "p_value": 2e-06,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 8,
+    "c": 413,
+    "chi2": 387.6865,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT General",
+    "model_b": "BERT Blockchain",
+    "b": 6,
+    "c": 414,
+    "chi2": 394.4024,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 2,
+    "c": 415,
+    "chi2": 407.06,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "BERT General",
+    "model_b": "RoBERTa General",
+    "b": 32,
+    "c": 77,
+    "chi2": 17.7615,
+    "p_value": 2.5e-05,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "BERT General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 8,
+    "c": 407,
+    "chi2": 381.6964,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "BERT General",
+    "model_b": "BERT Blockchain",
+    "b": 6,
+    "c": 408,
+    "chi2": 388.4082,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "BERT General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 2,
+    "c": 409,
+    "chi2": 401.0608,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "RoBERTa General",
+    "model_b": "DistilBERT Blockchain",
+    "b": 8,
+    "c": 362,
+    "chi2": 336.7811,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "RoBERTa General",
+    "model_b": "BERT Blockchain",
+    "b": 4,
+    "c": 361,
+    "chi2": 347.2219,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "RoBERTa General",
+    "model_b": "RoBERTa Blockchain",
+    "b": 1,
+    "c": 363,
+    "chi2": 358.0247,
+    "p_value": 0.0,
+    "stars": "***"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT Blockchain",
+    "model_b": "BERT Blockchain",
+    "b": 3,
+    "c": 6,
+    "chi2": 0.4444,
+    "p_value": 0.504985,
+    "stars": "ns"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "DistilBERT Blockchain",
+    "model_b": "RoBERTa Blockchain",
+    "b": 2,
+    "c": 10,
+    "chi2": 4.0833,
+    "p_value": 0.043308,
+    "stars": "*"
+  },
+  {
+    "test_set": "blockchain",
+    "model_a": "BERT Blockchain",
+    "model_b": "RoBERTa Blockchain",
+    "b": 1,
+    "c": 6,
+    "chi2": 2.2857,
+    "p_value": 0.13057,
+    "stars": "ns"
+  }
+]
