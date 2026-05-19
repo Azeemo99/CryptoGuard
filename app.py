@@ -99,9 +99,9 @@ def load_models():
                         "model":     model,
                         "device":    device,
                     }
-                print("✓")
+                print("Loaded")
             except Exception as e:
-                print(f"✗  {e}")
+                print(f"Failed to load  {e}")
                 MODELS[model_key] = None
 
         loaded = sum(1 for v in MODELS.values() if v is not None)
@@ -243,7 +243,6 @@ def classify():
         "ensemble_label": ensemble_label,
         "inference_ms":   elapsed,
     })
-
 
 #server startup
 if __name__ == '__main__':
