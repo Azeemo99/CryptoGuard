@@ -1,6 +1,11 @@
 .env
+.venv/
+.idea/
 data/
+models/
+outputs/
 __pycache__/
 *.pyc
 server.log
 packages/
+anaconda_projects/
